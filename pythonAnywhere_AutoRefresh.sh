@@ -3,6 +3,6 @@ if (( $# < 2 )); then
      exit
 fi
 pip install requests
-curl -o pyAny_autoRefresh.py https://pastebin.com/raw/Pxvs4uxW
+curl -o pyAny_autoRefresh.py https://raw.githubusercontent.com/smartm13/AutoExtend_pythonanywhere/master/pythonAnywhere_AutoRefresh.py
 python pyAny_autoRefresh.py "$@"
 #rm pyAuto.py
