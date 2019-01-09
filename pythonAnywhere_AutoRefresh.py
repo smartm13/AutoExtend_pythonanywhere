@@ -26,11 +26,13 @@ def refreshPA(uname,passw):
     response3 = requests.post('https://www.pythonanywhere.com/user/{0}/webapps/{0}.pythonanywhere.com/extend'.format(uname), headers=headers, cookies=cookies, data=data)
     success=response3.request.url.count(uname)
     return bool(success)
-def loopMain(uname,passw,interval=60*60*24*30):#seconds
+def loopMain(uname,passw,interval=60*60*24*30,count=-1):#seconds
     import time
-    while True:
-        print("Log:{}: Attempt Success={}".format(str(__import__("datetime").datetime.now(__import__("pytz").timezone('Asia/Kolkata'))),refreshPA(uname,passw)))
+    ind=0
+    while int(count)!=0:
+        ind,count=ind+1,count-1
+        print("Log:{}: Attempt({}) Success={}".format(str(__import__("datetime").datetime.now(__import__("pytz").timezone('Asia/Kolkata'))),ind,refreshPA(uname,passw)))
         time.sleep(int(interval))
 if __name__=="__main__":
-    if len(__import__('sys').argv)<3:print("Usage: python script.py username password [interval(seconds)]")
-    else:loopMain(*__import__('sys').argv[1:4])
+    if len(__import__('sys').argv)<3:print("Usage: python script.py username password [interval(seconds)] [count]")
+    else:loopMain(*__import__('sys').argv[1:5])
