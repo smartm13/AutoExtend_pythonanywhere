@@ -7,7 +7,7 @@ curl -o pyAnywAuto.sh https://raw.githubusercontent.com/smartm13/AutoExtend_pyth
 bash pyAnywAuto.sh <uname> <passw> [<seconds-interval>=1month] [count=-1] [logtimestamp-timezone=Asia/Kolkata]
 ```
 
-Update:  
+## Update:  
 pythonanywhere console dies after some idle time, so it is pointless to trust it for extending purposes.  
 You might need to run the script someplace else and leave it running.  
 If you cannot host the script for long period of time in your local or some place else,  
